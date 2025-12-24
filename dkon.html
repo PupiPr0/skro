@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DKon — Свободный, Анонимный и Молниеносный Мессенджер 2025</title>
+  <meta name="description" content="DKon.app — альтернатива WhatsApp и Telegram. Без номера телефона, полная анонимность, никаких лагов, супербыстрый. Работает в России без блокировок!"/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #5e60ce;
+      --primary-dark: #4d4fc2;
+      --accent: #ff6b6b;
+      --dark: #0f0f1a;
+      --light: #f9faff;
+      --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero */
+    .hero {
+      background: var(--gradient);
+      color: white;
+      padding: 180px 0 140px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.18) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.8rem, 9vw, 6.2rem);
+      margin-bottom: 28px;
+      letter-spacing: -2px;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .hero .subtitle {
+      font-size: 1.7rem;
+      max-width: 880px;
+      margin: 0 auto 60px;
+      font-weight: 300;
+      opacity: 0.95;
+    }
+
+    .hero .highlight {
+      color: #ffd166;
+      font-weight: 700;
+    }
+
+    .btn-primary {
+      background: white;
+      color: var(--primary-dark);
+      padding: 20px 56px;
+      font-size: 1.35rem;
+      font-weight: 700;
+      border-radius: 60px;
+      text-decoration: none;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+      transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+      margin: 16px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 3px solid white;
+      color: white;
+      padding: 18px 52px;
+      font-size: 1.35rem;
+      font-weight: 600;
+    }
+
+    /* Key Benefits */
+    .benefits {
+      padding: 140px 0;
+      background: white;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 48px;
+      margin-top: 80px;
+    }
+
+    .benefit-card {
+      background: rgba(255,255,255,0.9);
+      border-radius: 28px;
+      padding: 48px 36px;
+      box-shadow: 0 20px 60px rgba(94,96,206,0.12);
+      transition: all 0.4s ease;
+      text-align: center;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-16px);
+      box-shadow: 0 32px 90px rgba(94,96,206,0.22);
+    }
+
+    .benefit-icon {
+      font-size: 4.2rem;
+      margin-bottom: 24px;
+      color: var(--primary);
+    }
+
+    .benefit-card h3 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: var(--primary-dark);
+    }
+
+    /* Apps section */
+    .apps-section {
+      padding: 140px 0;
+      background: var(--light);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 3.8rem;
+      margin-bottom: 100px;
+      color: var(--dark);
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 48px;
+    }
+
+    .app-card {
+      background: white;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+    }
+
+    .app-card:hover {
+      transform: translateY(-16px);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.15);
+    }
+
+    .app-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .app-info {
+      padding: 40px 32px;
+      text-align: center;
+    }
+
+    .app-info h3 {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+      color: var(--primary);
+    }
+
+    .app-features {
+      list-style: none;
+      text-align: left;
+      margin: 24px 0;
+      font-size: 1.1rem;
+    }
+
+    .app-features li {
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .app-features li::before {
+      content: '⚡';
+      position: absolute;
+      left: 0;
+      font-size: 1.3rem;
+    }
+
+    /* Final CTA */
+    .final-cta {
+      background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+      color: white;
+      padding: 160px 0;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(3.5rem, 8vw, 5.5rem);
+      margin-bottom: 40px;
+    }
+
+    footer {
+      background: var(--dark);
+      color: #bbb;
+      text-align: center;
+      padding: 80px 24px;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 140px 0 100px; }
+      .section-title { font-size: 3rem; }
+      .btn-primary, .btn-outline { padding: 16px 40px; font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>DKon — Свобода<br>Без Компромиссов</h1>
+      <div class="subtitle">
+        Забудьте про лаги, блокировки и навязчивые номера телефонов.<br>
+        <span class="highlight">DKon</span> — это <strong>молниеносный</strong>, <strong>полностью анонимный</strong> мессенджер и социальная сеть.<br>
+        Регистрация без номера телефона → максимальная приватность
+      </div>
+
+      <div>
+        <a href="https://dkon.app/dev/last_version/dkon.apk" class="btn-primary">СКАЧАТЬ DKon ДЛЯ ANDROID</a>
+        <a href="https://dkon.app/dev/last_version/dkon.exe" class="btn-primary" style="background:#fff;color:var(--primary);">СКАЧАТЬ ДЛЯ WINDOWS</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ключевые преимущества -->
+  <section class="benefits">
+    <div class="container">
+      <h2 class="section-title" style="font-size:4.2rem;">Почему миллионы уже выбрали DKon</h2>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">⚡</div>
+          <h3>Молниеносная скорость</h3>
+          <p style="font-size:1.2rem;">Никаких лагов даже при слабом интернете. Всё летает — сообщения, звонки, музыка, лента.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">🕵️</div>
+          <h3>Полная анонимность</h3>
+          <p style="font-size:1.2rem;">Регистрация без номера телефона. Никто не узнает, кто вы на самом деле.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">🔒</div>
+          <h3>Без блокировок</h3>
+          <p style="font-size:1.2rem;">Работает в России стабильно, без VPN, без нервов, прямо сейчас.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Приложения -->
+  <section class="apps-section">
+    <div class="container">
+      <h2 class="section-title">Выберите свой DKon</h2>
+
+      <div class="apps-grid">
+        <div class="app-card">
+          
+          <div class="app-info">
+            <h3>DKon Полный</h3>
+            <p style="font-size:1.25rem; margin-bottom:24px;">Всё в одном: звонки, чаты, посты, музыка, сообщества</p>
+            <ul class="app-features">
+              <li>Мгновенные сообщения и звонки</li>
+              <li>Без лагов даже на 4G</li>
+              <li>Социальная лента + музыка</li>
+              <li>~35 МБ • Android 5.0+</li>
+            </ul>
+            <a href="https://dkon.app/dev/last_version/dkon.apk" class="btn-primary" style="background:var(--primary);color:white;">СКАЧАТЬ</a>
+          </div>
+        </div>
+
+        <div class="app-card">
+          <div class="app-info" style="padding-top:80px;">
+            <h3>DK Lite</h3>
+            <p style="font-size:1.25rem; margin-bottom:24px;">Максимально лёгкий и быстрый</p>
+            <ul class="app-features">
+              <li>Работает на очень старых телефонах</li>
+              <li>Без лагов, экономит батарею</li>
+              <li>Сообщения + посты + музыка</li>
+              <li>Всего ~15 МБ • Android 4.2+</li>
+            </ul>
+            <a href="https://dkon.app/dev/last_version/dkon_lite.apk" class="btn-primary" style="background:var(--primary);color:white;">СКАЧАТЬ LITE</a>
+          </div>
+        </div>
+
+        <div class="app-card">
+         
+          <div class="app-info">
+            <h3>DM — Чистый Мессенджер</h3>
+            <p style="font-size:1.25rem; margin-bottom:24px;">Только общение. Ничего лишнего.</p>
+            <ul class="app-features">
+              <li>Звонки и чаты без задержек</li>
+              <li>Личная галерея</li>
+              <li>Максимальная скорость</li>
+              <li>~30 МБ • Android 5.0+</li>
+            </ul>
+            <a href="https://dkon.app/dev/last_version/dm.apk" class="btn-primary" style="background:var(--primary);color:white;">СКАЧАТЬ DM</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Компьютерные версии -->
+      <div style="margin-top:120px; text-align:center;">
+        <h2 style="font-size:3.5rem; margin-bottom:60px;">DKon на компьютере</h2>
+        <p style="font-size:1.4rem; max-width:900px; margin:0 auto 48px;">Те же преимущества: без лагов, анонимно, молниеносно. Звонки и чаты на большом экране.</p>
+
+        <div style="display:flex; justify-content:center; gap:40px; flex-wrap:wrap; font-size:1.3rem; margin-top:40px;">
+          <a href="https://dkon.app/dev/last_version/dkon.exe" class="btn-primary" style="background:#333;color:white;">Windows .exe</a>
+          <a href="https://dkon.app/dev/last_version/dkon.dmg" class="btn-primary" style="background:#333;color:white;">MacOS .dmg</a>
+          <a href="https://dkon.app/dev/last_version/dkon.appimage" class="btn-primary" style="background:#333;color:white;">Linux AppImage</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Финальный призыв -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Связь, которую<br>не остановить</h2>
+      <p style="font-size:1.8rem; max-width:900px; margin:0 auto 60px; font-weight:300;">
+        DKon — это не просто мессенджер.<br>
+        Это <strong>свобода</strong>, <strong>скорость</strong> и <strong>полная анонимность</strong> в 2025 году.<br>
+        Скачай прямо сейчас, пока интернет ещё свободен.
+      </p>
+
+      <a href="https://dkon.app/dev/last_version/dkon.apk" class="btn-primary" style="font-size:1.8rem; padding:24px 80px;">СКАЧАТЬ DKon СЕЙЧАС →</a>
+    </div>
+  </section>
+
+  <footer>
+    DKon.app — мессенджер будущего: анонимный, быстрый, без блокировок<br>
+    © 2025 • Свобода общения без компромиссов
+  </footer>
+
+</body>
+</html>
