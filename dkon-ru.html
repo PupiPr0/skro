@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DKon — Связь без блокировок 2025</title>
+  <meta name="description" content="Альтернатива WhatsApp и Telegram. Стабильные звонки, чаты, музыка и посты в России без VPN и блокировок"/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #6c5ce7;
+      --primary-dark: #5649c0;
+      --accent: #ff7675;
+      --dark: #1e1e2f;
+      --light: #f8f9ff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 140px 0 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);
+      animation: pulse 15s infinite;
+    }
+
+    @keyframes pulse {
+      0%,100% { transform: scale(1); opacity: 0.4; }
+      50% { transform: scale(1.2); opacity: 0.1; }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 8vw, 5.2rem);
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      max-width: 720px;
+      margin: 0 auto 48px;
+      opacity: 0.95;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 18px 48px;
+      background: white;
+      color: var(--primary-dark);
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+      transition: all 0.3s ease;
+      margin: 12px;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+
+    /* Cards section */
+    .features {
+      padding: 120px 0;
+      background: white;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 3.2rem;
+      margin-bottom: 80px;
+      color: var(--dark);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 32px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 40px 32px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+      transition: all 0.35s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.12);
+    }
+
+    .card h3 {
+      font-size: 2rem;
+      margin: 24px 0 16px;
+      color: var(--primary);
+    }
+
+    .card .size {
+      color: #666;
+      font-size: 0.95rem;
+      margin-top: 8px;
+    }
+
+    /* Final CTA */
+    .final-cta {
+      background: linear-gradient(135deg, #ff6b6b 0%, #f94d6a 100%);
+      color: white;
+      padding: 140px 0;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(2.8rem, 7vw, 4.5rem);
+      margin-bottom: 32px;
+    }
+
+    .final-cta .big-btn {
+      font-size: 1.5rem;
+      padding: 24px 64px;
+    }
+
+    footer {
+      background: var(--dark);
+      color: #aaa;
+      text-align: center;
+      padding: 60px 20px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 100px 0 80px; }
+      .features, .final-cta { padding: 80px 0; }
+      .section-title { font-size: 2.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Связь, которую не заблокировать</h1>
+      <p>WhatsApp и Telegram душат звонки? DKon работает стабильно прямо сейчас — без VPN, без нервов, без ограничений.</p>
+      
+      <div>
+        <a href="https://dkon.app/dev/last_version/dkon.apk" class="btn">Скачать DKon для Android</a>
+        <a href="https://dkon.app/dev/last_version/dkon.exe" class="btn btn-outline">Скачать для Windows</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Варианты приложений -->
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Выберите свой DKon</h2>
+
+      <div class="cards-grid">
+        <div class="card">
+          <h3>DKon Полный</h3>
+          <p>Звонки • Чаты • Посты • Музыка • Сообщества</p>
+          <div class="size">~35 МБ • Android 5.0+</div>
+          <a href="https://dkon.app/dev/last_version/dkon.apk" class="btn" style="margin-top:24px;">Скачать</a>
+        </div>
+
+        <div class="card">
+          <h3>DK Lite</h3>
+          <p>Сообщения • Посты • Музыка<br>Для старых телефонов</p>
+          <div class="size">Всего ~15 МБ • Android 4.2+</div>
+          <a href="https://dkon.app/dev/last_version/dkon_lite.apk" class="btn" style="margin-top:24px;">Скачать</a>
+        </div>
+
+        <div class="card">
+          <h3>DM Мессенджер</h3>
+          <p>Чаты • Звонки • Личная галерея</p>
+          <div class="size">~30 МБ • Android 5.0+</div>
+          <a href="https://dkon.app/dev/last_version/dm.apk" class="btn" style="margin-top:24px;">Скачать</a>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:80px;">
+        <h3 style="font-size:2.2rem; margin-bottom:24px;">DKon на компьютере</h3>
+        <p style="font-size:1.2rem; color:#555; margin-bottom:32px;">
+          Windows • Linux • macOS — звонки и чаты на большом экране
+        </p>
+        <div style="display:flex; justify-content:center; gap:32px; flex-wrap:wrap; font-size:1.1rem;">
+          <a href="https://dkon.app/dev/last_version/dkon.exe">Windows</a> •
+          <a href="https://dkon.app/dev/last_version/dkon.dmg">MacOS</a> •
+          <a href="https://dkon.app/dev/last_version/dkon.appimage">Linux AppImage</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Финальный призыв -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Не жди, пока связь пропадёт</h2>
+      <p style="font-size:1.5rem; max-width:780px; margin:0 auto 48px; opacity:0.95;">
+        Тысячи людей уже общаются свободно через DKon.<br>
+        <strong>Скачай прямо сейчас</strong> — пока интернет ещё работает.
+      </p>
+
+      <a href="https://dkon.app/dev/last_version/dkon.apk" class="btn big-btn">СКАЧАТЬ DKon СЕЙЧАС →</a>
+    </div>
+  </section>
+
+  <footer>
+    DKon.app — мессенджер и социальная сеть, которые пока ещё работают в России без блокировок<br>
+    © 2025 • Связь без границ
+  </footer>
+
+</body>
+</html>
